@@ -13,6 +13,15 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(60), spacing: 8), count: 5), alignment: .leading, spacing: 8) {
+                    ForEach(0..<5) { index in
+                        TextCardBottom(text: viewModel.rowConditions[index])
+                    }
+                }
+            }
+            .padding(.leading, 6)
+            
+            HStack(spacing: 0) {
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(60), spacing: 8), count: 5), spacing: 8) {
                     ForEach(0..<5) { row in
                         ForEach(0..<5) { col in
@@ -25,7 +34,6 @@ struct ContentView: View {
                     }
                 }
                 .padding(.leading, 8)
-                .padding(.top)
                 
                 LazyVGrid(columns: [GridItem(.fixed(60))], spacing: 8) {
                     ForEach(0..<5) { index in
@@ -33,18 +41,7 @@ struct ContentView: View {
                     }
                 }
                 .padding(.trailing, 8)
-                .padding(.top)
             }
-            
-            HStack(spacing: 0) {
-                LazyVGrid(columns: Array(repeating: GridItem(.fixed(60), spacing: 8), count: 5), alignment: .leading, spacing: 8) {
-                    ForEach(0..<5) { index in
-                        TextCardBottom(text: viewModel.rowConditions[index])
-                    }
-                }
-                .padding(.bottom)
-            }
-            .padding(.leading, 6)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex: "191919"))
