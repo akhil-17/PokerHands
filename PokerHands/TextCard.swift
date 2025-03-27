@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TextCardRight: View {
+struct TextCardLeft: View {
     let text: String
     
     init(text: String) {
@@ -12,11 +12,10 @@ struct TextCardRight: View {
         Text(text)
             .font(.system(size: 13, weight: .medium, design: .default))
             .foregroundColor(Color(hex: "d4d4d4"))
-            .multilineTextAlignment(.leading)
+            .multilineTextAlignment(.trailing)
             .lineLimit(4)
-            .padding(.leading, 8)
-            .padding(.trailing, 2)
-            .frame(width: 60, height: 80, alignment: .leading)
+            .padding(.trailing, 8)
+            .frame(width: 60, height: 80, alignment: .trailing)
             //.background(Color.white)
             //.cornerRadius(8)
             //.shadow(radius: 2)
@@ -57,11 +56,11 @@ struct TextCardTop: View {
 
 #Preview {
     VStack(spacing: 20) {
-        TextCardRight(text: "Royal Flush")
-        TextCardRight(text: "Straight Flush")
-        TextCardRight(text: "Four of a Kind")
-        TextCardRight(text: "Full House")
-        TextCardRight(text: "Flush")
+        TextCardLeft(text: "Royal Flush")
+        TextCardLeft(text: "Straight Flush")
+        TextCardLeft(text: "Four of a Kind")
+        TextCardLeft(text: "Full House")
+        TextCardLeft(text: "Flush")
         
         Divider()
         
