@@ -15,7 +15,7 @@ struct ContentView: View {
             HStack(spacing: 0) {
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(60), spacing: 8), count: 5), alignment: .leading, spacing: 8) {
                     ForEach(0..<5) { index in
-                        TextCardBottom(text: viewModel.rowConditions[index])
+                        TextCardTop(text: viewModel.rowConditions[index])
                     }
                 }
             }

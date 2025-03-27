@@ -10,13 +10,12 @@ struct TextCardRight: View {
     
     var body: some View {
         Text(text)
-            .font(.system(size: 14, weight: .semibold, design: .default))
+            .font(.system(size: 13, weight: .medium, design: .default))
             .foregroundColor(Color(hex: "d4d4d4"))
             .multilineTextAlignment(.leading)
-            .minimumScaleFactor(0.5)
             .lineLimit(4)
             .padding(.leading, 8)
-            .padding(.trailing, 4)
+            .padding(.trailing, 2)
             .frame(width: 60, height: 80, alignment: .leading)
             //.background(Color.white)
             //.cornerRadius(8)
@@ -28,7 +27,7 @@ struct TextCardRight: View {
     }
 }
 
-struct TextCardBottom: View {
+struct TextCardTop: View {
     let text: String
     
     init(text: String) {
@@ -38,11 +37,11 @@ struct TextCardBottom: View {
     
     var body: some View {
         Text(text)
-            .font(.system(size: 14, weight: .semibold, design: .default))
+            .font(.system(size: 13, weight: .medium, design: .default))
             .foregroundColor(Color(hex: "d4d4d4"))
-            .multilineTextAlignment(.leading)
-            .minimumScaleFactor(0.5)
+            .multilineTextAlignment(.center)
             .lineLimit(4)
+            .frame(maxWidth: .infinity)
             .padding(.horizontal, 4)
             .padding(.bottom, 8)
             .frame(width: 60, height: 80, alignment: .bottomLeading)
@@ -66,11 +65,11 @@ struct TextCardBottom: View {
         
         Divider()
         
-        TextCardBottom(text: "Royal Flush")
-        TextCardBottom(text: "Straight Flush")
-        TextCardBottom(text: "Four of a Kind")
-        TextCardBottom(text: "Full House")
-        TextCardBottom(text: "Flush")
+        TextCardTop(text: "Royal Flush")
+        TextCardTop(text: "Straight Flush")
+        TextCardTop(text: "Four of a Kind")
+        TextCardTop(text: "Full House")
+        TextCardTop(text: "Flush")
     }
     .padding()
     .background(Color(hex: "191919"))

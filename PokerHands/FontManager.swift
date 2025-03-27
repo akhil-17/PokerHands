@@ -2,7 +2,7 @@ import SwiftUI
 
 class FontManager {
     static func registerFonts() {
-        guard let fontURL = Bundle.main.url(forResource: "SF-Compact-Text-Semibold", withExtension: "otf") else {
+        guard let fontURL = Bundle.main.url(forResource: "SF-Compact-Text-Regular", withExtension: "otf") else {
             print("Could not find font file")
             return
         }
